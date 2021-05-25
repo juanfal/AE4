@@ -1,0 +1,62 @@
+{
+    "NumberOfCells": 10,
+    "NumberOfRsrcsInEachCell": 10000,
+    "Distribution": "100n",
+    "species": [
+        {
+        "id": "Male",
+        "NumberOfItems": 100,
+        "DirectOffspring": 0,
+        "GroupPartners": ["Female"],
+        "PhenotypicFlexibility": 1,
+
+        "AssociatedSpecies":   [],
+        "IndirectOffspring": 0,
+        "FitnessVariationLimit": 0
+        },
+        {
+        "id": "Female",
+        "NumberOfItems": 100,
+        "DirectOffspring": 0,
+        "GroupPartners": ["Male|Female"],
+        "PhenotypicFlexibility": 1,
+
+        "AssociatedSpecies":   [],
+        "IndirectOffspring": 0,
+        "FitnessVariationLimit": 0
+        },
+        {
+        "id": "Asex",
+        "NumberOfItems": 200,
+        "DirectOffspring": 4,
+        "GroupPartners": [],
+        "PhenotypicFlexibility": 0,
+
+        "AssociatedSpecies":   [],
+        "IndirectOffspring": 0,
+        "FitnessVariationLimit": 0
+        },
+        {
+        "id": "Male|Female",
+        "NumberOfItems": 0,
+        "DirectOffspring": 4,
+        "GroupPartners": [],
+        "PhenotypicFlexibility": 0.0,
+
+        "AssociatedSpecies":   [],
+        "IndirectOffspring": 0,
+        "FitnessVariationLimit": 0
+        },
+        {
+        "id": "Female|Male|Female",
+        "NumberOfItems": 0,
+        "DirectOffspring": 4,
+        "GroupPartners": [],
+        "PhenotypicFlexibility": 0.0,
+
+        "AssociatedSpecies":   [],
+        "IndirectOffspring": 0,
+        "FitnessVariationLimit": 0
+        }
+    ]
+}

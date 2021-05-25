@@ -1,0 +1,19 @@
+{
+    "NumberOfCells": 100,
+    "NumberOfRsrcsInEachCell": 100,
+    "Distribution": "100n",
+    "species": [
+        {
+        "id": "SP",
+        "NumberOfItems": 100,
+        "DirectOffspring": 4,
+        "Distribution": "100n",
+        "GroupPartners": [],
+        "PhenotypicFlexibility": 0.0,
+
+        "AssociatedSpecies":   [],
+        "IndirectOffspring": 0,
+        "FitnessVariationLimit": 0
+        }
+    ]
+}
