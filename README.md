@@ -24,7 +24,11 @@ You need to user python3 and the next libraries:
 
 it has a complete help system you can show with:
 
-    ./ae4 --help
+    ./ae4.py --help
+
+or
+
+    python3 ae4.py --help
 
 
 Málaga, 2021-05-25
