@@ -30,47 +30,47 @@ __version__ = 0.28 # 2021-04-21
 try:
     import argparse
 except ImportError:
-    print("you need to install the library argparse. Copy and paste:")
+    print("You need to install the library argparse. Copy next line and paste:")
     print("pip3 install argparse")
 try:
     import datetime
 except ImportError:
-    print("you need to install the library datetime. Copy and paste:")
+    print("You need to install the library datetime. Copy next line and paste:")
     print("pip3 install datetime")
 try:
     import functools
 except ImportError:
-    print("you need to install the library functools. Copy and paste:")
+    print("You need to install the library functools. Copy next line and paste:")
     print("pip3 install functools")
 try:
     import matplotlib
 except ImportError:
-    print("you need to install the library matplotlib. Copy and paste:")
+    print("You need to install the library matplotlib. Copy next line and paste:")
     print("pip3 install matplotlib")
 try:
     import numpy
 except ImportError:
-    print("you need to install the library numpy. Copy and paste:")
+    print("You need to install the library numpy. Copy next line and paste:")
     print("pip3 install numpy")
 try:
     import pathlib
 except ImportError:
-    print("you need to install the library pathlib. Copy and paste:")
+    print("You need to install the library pathlib. Copy next line and paste:")
     print("pip3 install pathlib")
 try:
     import subprocess
 except ImportError:
-    print("you need to install the library subprocess. Copy and paste:")
+    print("You need to install the library subprocess. Copy next line and paste:")
     print("pip3 install subprocess")
 try:
     import urllib
 except ImportError:
-    print("you need to install the library urllib. Copy and paste:")
+    print("You need to install the library urllib. Copy next line and paste:")
     print("pip3 install urllib")
 try:
     import xlsxwriter
 except ImportError:
-    print("you need to install the library xlsxwriter. Copy and paste:")
+    print("You need to install the library xlsxwriter. Copy next line and paste:")
     print("pip3 install xlsxwriter")
 
 
