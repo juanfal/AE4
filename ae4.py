@@ -27,6 +27,52 @@ __version__ = 0.28 # 2021-04-21
 # pip3 install subprocess
 # pip3 install urllib
 
+try:
+    import argparse
+except ImportError:
+    print("you need to install the library argparse. Copy and paste:")
+    print("pip3 install argparse")
+try:
+    import datetime
+except ImportError:
+    print("you need to install the library datetime. Copy and paste:")
+    print("pip3 install datetime")
+try:
+    import functools
+except ImportError:
+    print("you need to install the library functools. Copy and paste:")
+    print("pip3 install functools")
+try:
+    import matplotlib
+except ImportError:
+    print("you need to install the library matplotlib. Copy and paste:")
+    print("pip3 install matplotlib")
+try:
+    import numpy
+except ImportError:
+    print("you need to install the library numpy. Copy and paste:")
+    print("pip3 install numpy")
+try:
+    import pathlib
+except ImportError:
+    print("you need to install the library pathlib. Copy and paste:")
+    print("pip3 install pathlib")
+try:
+    import subprocess
+except ImportError:
+    print("you need to install the library subprocess. Copy and paste:")
+    print("pip3 install subprocess")
+try:
+    import urllib
+except ImportError:
+    print("you need to install the library urllib. Copy and paste:")
+    print("pip3 install urllib")
+try:
+    import xlsxwriter
+except ImportError:
+    print("you need to install the library xlsxwriter. Copy and paste:")
+    print("pip3 install xlsxwriter")
+
 
 
 import os
@@ -1385,8 +1431,6 @@ def build_defaultjson(inDir):
         f.write("""{
     "NumberOfCells": 15,
     "NumberOfRsrcsInEachCell": 10000,
-    "MultilevelDeath1Percent": 0.0,
-    "LambdaForEgoism": 0.0,
     "Distribution": "100r",
     "species": [
         {"id": "A",
