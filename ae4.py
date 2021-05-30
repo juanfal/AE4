@@ -27,6 +27,8 @@ __version__ = 0.29 # 2021-05-25
 # pip3 install subprocess
 # pip3 install urllib
 
+# Added to help installation but repeated later
+
 try:
     import argparse
 except ImportError:
@@ -72,6 +74,8 @@ try:
 except ImportError:
     print("You need to install the library xlsxwriter. Copy next line, paste and execute it:")
     print("pip3 install xlsxwriter")
+
+# end
 
 
 
