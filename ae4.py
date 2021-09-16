@@ -5,7 +5,7 @@
 # juanfc 2019-02-16
 # ae4 2020-02-11
 
-__version__ = 0.30 # 2021-05-31
+__version__ = 0.31 # 2021-09-16
 
 # ############################################################################# #
 #                                 IMPORTS                                       #
@@ -1258,7 +1258,7 @@ References:
     theArgParser.add_argument('--sendTelegram',
     action='store_true', default=False,
     help=textwrap.dedent("""\
-    a Telegram message will be sent when the process finishes""")
+    a Telegram message will be sent when the process finishes- CANCELLED IN THIS PUBLIC RELEASED""")
     )
 
     theArgParser.add_argument('--swallow',
@@ -1365,7 +1365,9 @@ def initPlot():
     seqPobPrev = np.array([gWorld[:,:].sum(axis=0)])
     for i in range(gNumberOfSpecies):
         dplt.plot([0],  seqPobPrev[:,i])
-    _ = dplt.ax.set_title('Total number of each species')
+    _ = dplt.ax.set_title('Population for each species')
+    _ = dplt.ax.set_xlabel('Generation')
+
     dplt.ax.grid(b=True, which='both', color='0.65', linestyle='-')
     dplt.show(permanent=False)
     return dplt, seqPobPrev
@@ -1386,8 +1388,8 @@ def telegramNotificationFinished(message):
     import subprocess
     from urllib.parse import quote
 
-    bot_token="1162186732:AAEO2Vf9rJ21ebfhak1Iln-K7zNDDH9cUOg"
-    chat_id="-444023340"
+    bot_token=""
+    chat_id=""
     # text_to_send="$@"
     # curl "https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=$chat_id&text=$text_to_send"
 
@@ -1404,8 +1406,8 @@ def telegramNotificationStarting(message):
     import subprocess
     from urllib.parse import quote
 
-    bot_token="1162186732:AAEO2Vf9rJ21ebfhak1Iln-K7zNDDH9cUOg"
-    chat_id="-444023340"
+    bot_token=""
+    chat_id=""
     # text_to_send="$@"
     # curl "https://api.telegram.org/bot${bot_token}/sendMessage?chat_id=$chat_id&text=$text_to_send"
 
@@ -1513,7 +1515,8 @@ gConf = replaceAndAddDefaultsArgsInConf(readInitConfFile(gInitConfCompName), gAr
 gNumberOfSpecies = len(gConf["species"])
 
 if gConf['sendTelegram']:
-    telegramNotificationStarting(" ".join(sys.argv))
+    pass
+    # telegramNotificationStarting(" ".join(sys.argv))
 
 
 
@@ -1721,4 +1724,5 @@ if gOnLinux and genNumber < gArgs["numGen"]:
         print(newArgv, file=f)
 
 if gConf['sendTelegram']:
-    telegramNotificationFinished(newArgv)
+    pass
+    # telegramNotificationFinished(newArgv)
