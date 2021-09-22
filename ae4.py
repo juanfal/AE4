@@ -5,7 +5,7 @@
 # juanfc 2019-02-16
 # ae4 2020-02-11
 
-__version__ = 0.31 # 2021-09-16
+__version__ = 0.32 # 2021-09-23
 
 # ############################################################################# #
 #                                 IMPORTS                                       #
@@ -1367,6 +1367,7 @@ def initPlot():
         dplt.plot([0],  seqPobPrev[:,i])
     _ = dplt.ax.set_title('Population for each species')
     _ = dplt.ax.set_xlabel('Generation')
+    dplt.ax.yaxis.set_major_formatter(matplotlib.ticker.StrMethodFormatter('{x:,.0f}'))
 
     dplt.ax.grid(b=True, which='both', color='0.65', linestyle='-')
     dplt.show(permanent=False)
@@ -1514,8 +1515,9 @@ gConf = replaceAndAddDefaultsArgsInConf(readInitConfFile(gInitConfCompName), gAr
 
 gNumberOfSpecies = len(gConf["species"])
 
-if gConf['sendTelegram']:
-    pass
+# if gConf['pass']:
+#     pass
+    # sendTelegram
     # telegramNotificationStarting(" ".join(sys.argv))
 
 

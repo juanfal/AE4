@@ -1,0 +1,52 @@
+{
+    "Distribution": "100n",
+    "NumberOfCells": 100,
+    "NumberOfRsrcsInEachCell": 10000,
+    "initFile": "Paper1/1Comm",
+    "numGen": 150,
+    "outDir": null,
+    "outFName": null,
+    "p": true,
+    "redirectStdout": false,
+    "saveExcel": false,
+    "saveWorld": false,
+    "sendTelegram": false,
+    "setRandomSeed": -1,
+    "species": [
+        {
+            "AssociatedSpecies": [],
+            "DirectOffspring": 3,
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [
+                "Shark"
+            ],
+            "IndirectOffspring": 0,
+            "NumberOfItems": 59760,
+            "PhenotypicFlexibility": 0.9,
+            "id": "Sharksucker"
+        },
+        {
+            "AssociatedSpecies": [],
+            "DirectOffspring": 70,
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [],
+            "IndirectOffspring": 0,
+            "NumberOfItems": 994000,
+            "PhenotypicFlexibility": 0.0,
+            "id": "Shark"
+        },
+        {
+            "AssociatedSpecies": [],
+            "DirectOffspring": 70,
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [],
+            "IndirectOffspring": 0,
+            "NumberOfItems": 0,
+            "PhenotypicFlexibility": 0.0,
+            "id": "Sharksucker|Shark"
+        }
+    ],
+    "swallow": false,
+    "varia": false,
+    "verbose": false
+}

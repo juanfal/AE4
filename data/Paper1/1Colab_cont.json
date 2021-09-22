@@ -1,0 +1,54 @@
+{
+    "Distribution": "100n",
+    "NumberOfCells": 100,
+    "NumberOfRsrcsInEachCell": 1000,
+    "initFile": "Paper1/1Colab",
+    "numGen": 3,
+    "outDir": null,
+    "outFName": null,
+    "p": true,
+    "redirectStdout": false,
+    "saveExcel": false,
+    "saveWorld": false,
+    "sendTelegram": false,
+    "setRandomSeed": -1,
+    "species": [
+        {
+            "AssociatedSpecies": [],
+            "DirectOffspring": 5,
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [],
+            "IndirectOffspring": 0,
+            "NumberOfItems": 12500,
+            "PhenotypicFlexibility": 0.0,
+            "id": "Solitary bees"
+        },
+        {
+            "AssociatedSpecies": [
+                "Eusocial bess"
+            ],
+            "DirectOffspring": 0,
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [],
+            "IndirectOffspring": 5,
+            "NumberOfItems": 5660,
+            "PhenotypicFlexibility": 0.0,
+            "id": "Eusocial bess"
+        },
+        {
+            "AssociatedSpecies": [
+                "Collaborating bees"
+            ],
+            "DirectOffspring": 3,
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [],
+            "IndirectOffspring": 2,
+            "NumberOfItems": 9180,
+            "PhenotypicFlexibility": 0.0,
+            "id": "Collaborating bees"
+        }
+    ],
+    "swallow": false,
+    "varia": false,
+    "verbose": false
+}

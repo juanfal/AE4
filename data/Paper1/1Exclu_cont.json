@@ -1,0 +1,42 @@
+{
+    "Distribution": "100n",
+    "NumberOfCells": 10,
+    "NumberOfRsrcsInEachCell": 100,
+    "initFile": "Paper1/1Exclu",
+    "numGen": 50,
+    "outDir": null,
+    "outFName": null,
+    "p": true,
+    "redirectStdout": false,
+    "saveExcel": false,
+    "saveWorld": false,
+    "sendTelegram": false,
+    "setRandomSeed": -1,
+    "species": [
+        {
+            "AssociatedSpecies": [],
+            "DirectOffspring": 7,
+            "Distribution": "100n",
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [],
+            "IndirectOffspring": 0,
+            "NumberOfItems": 980,
+            "PhenotypicFlexibility": 0.0,
+            "id": "P.aurelia"
+        },
+        {
+            "AssociatedSpecies": [],
+            "DirectOffspring": 4,
+            "Distribution": "100n",
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [],
+            "IndirectOffspring": 0,
+            "NumberOfItems": 0,
+            "PhenotypicFlexibility": 0.0,
+            "id": "P.caudatum"
+        }
+    ],
+    "swallow": false,
+    "varia": false,
+    "verbose": true
+}

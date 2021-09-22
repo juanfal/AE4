@@ -1,12 +1,12 @@
 {
-    "NumberOfCells": 100,
+    "NumberOfCells": 10,
     "NumberOfRsrcsInEachCell": 100,
     "Distribution": "100n",
     "species": [
         {
         "id": "P.aurelia",
         "NumberOfItems": 100,
-        "DirectOffspring": 6,
+        "DirectOffspring": 7,
         "Distribution": "100n",
         "GroupPartners": [],
         "PhenotypicFlexibility": 0.0,

@@ -1,0 +1,64 @@
+{
+    "Distribution": "100n",
+    "NumberOfCells": 100,
+    "NumberOfRsrcsInEachCell": 1000,
+    "initFile": "Paper1/1Eu2",
+    "numGen": 300,
+    "outDir": null,
+    "outFName": null,
+    "p": true,
+    "redirectStdout": false,
+    "saveExcel": false,
+    "saveWorld": false,
+    "sendTelegram": false,
+    "setRandomSeed": -1,
+    "species": [
+        {
+            "AssociatedSpecies": [],
+            "DirectOffspring": 5,
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [],
+            "IndirectOffspring": 0,
+            "NumberOfItems": 850,
+            "PhenotypicFlexibility": 0.0,
+            "id": "Solitary bees"
+        },
+        {
+            "AssociatedSpecies": [],
+            "DirectOffspring": 5,
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [
+                "Eusocial Wil"
+            ],
+            "IndirectOffspring": 0,
+            "NumberOfItems": 132561,
+            "PhenotypicFlexibility": 1.0,
+            "id": "Eusocial Wil"
+        },
+        {
+            "AssociatedSpecies": [],
+            "DirectOffspring": 6,
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [],
+            "IndirectOffspring": 0,
+            "NumberOfItems": 0,
+            "PhenotypicFlexibility": 0.0,
+            "id": "Eusocial Wil|Eusocial Wil"
+        },
+        {
+            "AssociatedSpecies": [
+                "Eusocial Ham"
+            ],
+            "DirectOffspring": 0,
+            "FitnessVariationLimit": 0,
+            "GroupPartners": [],
+            "IndirectOffspring": 6,
+            "NumberOfItems": 32706,
+            "PhenotypicFlexibility": 0.0,
+            "id": "Eusocial Ham"
+        }
+    ],
+    "swallow": false,
+    "varia": false,
+    "verbose": false
+}
