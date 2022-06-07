@@ -1,47 +1,49 @@
-# Autómata Evolutivo 4 #
-Evolutionary automaton programmed in Python by
+# Autómata Evolutivo 4
+<i>Evolutionary automaton</i>
 
  - Javier Falgueras
  - Carlos Villagrasa, originally
  - Juan Falgueras
  - Andrés Moya
 
-This programs needs Python 3 and, once available in your system, a few
-standard python libraries.
 
-To execute this program you need to be on a UNIX-like `Terminal` (Windows users see the footnote <sup id="a1">[1](#f1)</sup>).
+This program is to be executed on a UNIX/Linux Terminal. It uses
+Python 3 and a few standard python libraries.
+
+On Windows there is not a default Terminal, but it is easy to install one See footnote <sup id="a1">[1](#f1)</sup>.
+
+First of all you have to download the directory with the program using
+ [the repository https://github.com/juanfal/AE4](https://github.com/juanfal/AE4)
 
 Change to the directory where `ae4.py` is.  There you can execute it by:
 
-    ./ae4.py
-
-or
-
     python3 ae4.py
 
-
-First thing you can try is:
-
-
-    ./ae4.py --help
-
-or
+First thing you need to try is:
 
     python3 ae4.py --help
 
-## Dependencies
+## Python libraries AE4 needs
 
-If you don't have some of the required standard packages it needs, you'll be
+If you don't have some of the required standard libraries it needs, you'll be
 asked for them just in the first execution.  The program will show you the
 standard command to install it.
 
+The next libraries have to be installed
 
-The next libraries are necessary
-(`argparse`, `datetime`, `functools`, `matplotlib`, `numpy`,
-`pathlib`, `subprocess`, `urllib`, `xlsxwriter`):
+    argparse
+    datetime 
+    functools 
+    matplotlib 
+    numpy
+    pathlib 
+    subprocess 
+    urllib 
+    xlsxwriter
 
-
-It doesn't harm to repeat their installation if you had any already installed:
+It is possible to repeat the installation of libraries already installed, 
+so if you had any of them but want to ensure you have all the needed ones,
+execute each of the following commands:
 
     pip3 install argparse
     pip3 install datetime

@@ -1,7 +1,7 @@
 {
     "Distribution": "100n",
     "NumberOfCells": 100,
-    "NumberOfRsrcsInEachCell": 100,
+    "NumberOfRsrcsInEachCell": 120,
     "initFile": "Paper1/1Pred",
     "numGen": 50,
     "outDir": null,
@@ -19,7 +19,7 @@
             "FitnessVariationLimit": 0,
             "GroupPartners": [],
             "IndirectOffspring": 0,
-            "NumberOfItems": 9900,
+            "NumberOfItems": 12000,
             "PhenotypicFlexibility": 0.0,
             "id": "N.sertifer"
         }

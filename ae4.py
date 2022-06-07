@@ -1369,7 +1369,7 @@ def initPlot():
     _ = dplt.ax.set_xlabel('Generation')
     dplt.ax.yaxis.set_major_formatter(matplotlib.ticker.StrMethodFormatter('{x:,.0f}'))
 
-    dplt.ax.grid(b=True, which='both', color='0.65', linestyle='-')
+    dplt.ax.grid(visible=True, which='both', color='0.65', linestyle='-')
     dplt.show(permanent=False)
     return dplt, seqPobPrev
 
