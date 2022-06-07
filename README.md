@@ -15,7 +15,17 @@ On Windows there is not a default Terminal, but it is easy to install one See fo
 First of all you have to download the directory with the program using
  [the repository https://github.com/juanfal/AE4](https://github.com/juanfal/AE4)
 
-Change to the directory where `ae4.py` is.  There you can execute it by:
+ The simplest way is to Use the Green Button-Menu -> Download Zip
+
+ Then decompress the .zip file and execute your Terminal aplication on your
+ computer, once the window of your Terminal is prompting you for a command,
+change to the fresh uncompressed directory where `ae4.py` is.
+
+    cd ...../AE4 
+
+the dots depend on the place you decompressed the downloaded .zip file
+
+There you can execute it by:
 
     python3 ae4.py
 
