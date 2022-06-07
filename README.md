@@ -81,6 +81,23 @@ execute each of the following commands:
     pip3 install xlsxwriter
 
 
+To follow the examples described in the Article this program is made for:
+
+Once the program is installed and running, to try each of the examples you can
+use the name of the file in `data` (no need to use the name of the `data`
+directory) like: `Paper2/2Plank1.json`
+
+Or you can add specific parameters like the ones in the Article this program is
+the base for.  In this case the parameters parameters for each case can be
+copy–pasted into the Terminal from the table “Terminal Command or Rank:” found
+in the Supplementary Material.
+
+For example, for the 'Paradox of the plankton' one of the examples is:
+
+    python3 ae4.py Paper1/1Plank4 --numGen=200 --saveExcel --setRandomSeed=1 --verbose
+
+
+
 Málaga, 2021-05-25
 
 [<b id="f1">1</b> [↩](#a1)] With Windows, you can use
