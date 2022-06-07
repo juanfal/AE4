@@ -958,6 +958,9 @@ def printv(*args, **kwargs):
 # ARGS AND CONF PROCESSING #
 # ######################## #
 
+# (to abort execution create a file "{TO_ABORT_EXECUTION_FILENAME}" in this very directory)
+# References:
+
 def defineAndGetCommandLineArgs():
     """Parses and returns command line arguments"""
 
@@ -965,11 +968,6 @@ def defineAndGetCommandLineArgs():
                      * Evolutionary Automata *
 
             Automata to evolve life through generations
-
-   (to abort execution create a file "{TO_ABORT_EXECUTION_FILENAME}" in this very directory)
-
-References:
-    ----
 
 """,
                     formatter_class=argparse.RawTextHelpFormatter)
