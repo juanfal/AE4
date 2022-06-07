@@ -16,6 +16,8 @@ If you use a modern Windows, you need to install Python which is not pre-install
 If you have an old Windows, perhaps you would need to see which one could suit your version:
 [link https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
 
+You have many videos explain the process [like this one](https://www.youtube.com/watch?v=Kn1HF3oD19c)
+
 The Terminal command on Windows can be the simple `command.com` you can find it through the "Start" button and searching for `Command Prompt`
 
 <!-- On Windows there is not a default Terminal, but it is easy to install one See footnote <sup id="a1">[1](#f1)</sup>.
