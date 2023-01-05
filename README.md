@@ -1,5 +1,9 @@
+<img style="display: block; margin: auto;"
+src="AE4FrontLogo.pdf">
+
+
 # Autómata Evolutivo 4
-<i>Evolutionary automaton</i>
+<i>Evolutionary automaton</i><br>2015--2023
 
  - Javier Falgueras
  - Carlos Villagrasa, originally
@@ -7,8 +11,11 @@
  - Andrés Moya
 
 
+
 This program is to be executed on a UNIX/Linux Terminal. It uses
 Python 3 and a few standard python libraries.
+
+### For Windows:
 
 If you use a modern Windows, you need to install Python which is not pre-installed.  You can do that using this
 [link https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe](https://www.python.org/ftp/python/3.10.5/python-3.10.5-amd64.exe)
@@ -16,14 +23,18 @@ If you use a modern Windows, you need to install Python which is not pre-install
 If you have an old Windows, perhaps you would need to see which one could suit your version:
 [link https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/)
 
-You have many videos explain the process [like this one](https://www.youtube.com/watch?v=Kn1HF3oD19c)
+You have many videos explaining the process [like this one](https://www.youtube.com/watch?v=Kn1HF3oD19c)
 
 The Terminal command on Windows can be the simple `command.com` you can find it through the "Start" button and searching for `Command Prompt`
 
 <!-- On Windows there is not a default Terminal, but it is easy to install one See footnote <sup id="a1">[1](#f1)</sup>.
  -->
 
-On MacOSX/Linux search for the application terminal and check python3 works there.
+### On MacOSX/Linux
+
+Search for the application terminal and check that `python3` works there.
+
+### Installing AE4
 
 Once Terminal + Python are ready, continue installing our AE4:
 
@@ -81,14 +92,14 @@ execute each of the following commands:
     pip3 install xlsxwriter
 
 
-To follow the examples described in the Article this program is made for:
+To follow the examples described in the Articles this program is made for:
 
 Once the program is installed and running, to try each of the examples you can
 use the name of the file in `data` (no need to use the name of the `data`
-directory) like: `Paper2/2Plank1.json`
+directory) like: `Paper2/2Plank1.json` or `Paper3/QDinAsoc3.json`
 
 Or you can add specific parameters like the ones in the Article this program is
-the base for.  In this case the parameters parameters for each case can be
+the base for.  In this case the parameters for each case can be
 copy–pasted into the Terminal from the table “Terminal Command or Rank:” found
 in the Supplementary Material.
 
