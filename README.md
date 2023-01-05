@@ -1,5 +1,5 @@
 <img style="display: block; margin: auto;"
-src="AE4FrontLogo.pdf">
+src="AE4FrontLogo.png">
 
 
 # Autómata Evolutivo 4
