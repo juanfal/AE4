@@ -226,6 +226,9 @@ class dynplot():
         else:
             plt.pause(self.refresh_rate)
 
+    def close(self):
+        self.plt.close()
+
     def psavefig(self, name):
         plt.savefig(name)
 

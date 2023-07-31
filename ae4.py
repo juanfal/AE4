@@ -947,6 +947,15 @@ def completeDataFileNames(fromfilename, inDirectory):
     world = os.path.join(inDirectory, fromfilename + ".world.txt")
     return conf, world
 
+
+def anyZeros(l):
+    i = 0
+    # print(f"zero[{l[i]}]? {gWorld[:,l[i]].sum(axis=0)}")
+    while i < len(l) and gWorld[:,l[i]].sum(axis=0) > 0:
+        i += 1
+    return i < len(l)
+
+
 def printv(*args, **kwargs):
     if gArgs["verbose"]:
         if type(args[0]) == str:
@@ -1295,6 +1304,22 @@ For example, for the 'Paradox of the plankton' one of the examples is:
     )
 
 
+    theArgParser.add_argument(
+        "--noZero", type=str,
+        default="", metavar="'str'",
+        help=textwrap.dedent("""\
+        Name or give the index of the species that when disappear, the execution has to finish.
+        If -, then any zero in any species will stop the execution.
+
+        When it stops by this criteria no enter is required and
+        the graphic output will disappear at the end
+
+        For example:
+            --noZero="gamA0,gamB0"
+            --noZero=1,0,2
+            --noZero=-""")
+    )
+
     return vars(theArgParser.parse_args())
 
 def readInitConfFile(fileName):
@@ -1555,6 +1580,24 @@ gListOfAssociationOrigs = collectAssociationActors() # list of species starting 
 gWithPartnerList = getListOfOrigGroups()
 
 
+
+
+# SPECIES FOR WHICH ZERO MEANS END
+#
+noZeroListi = []
+if gConf["noZero"]:
+    if gConf["noZero"] == '-':
+        noZeroListi = list(range(gNumberOfSpecies))
+    else:
+        noZeroListi = gConf["noZero"].split(',')
+        try:
+            noZeroListi = list(map(int,noZeroListi))
+        except:
+            noZeroListi = iListFrom_idList(noZeroListi)
+
+print(f"noZeroListi: {noZeroListi}")
+
+
 # OUTPUT DIRS AND FILENAMES
 #
 gOutDir = "results"
@@ -1635,7 +1678,6 @@ if gArgs["setRandomSeed"] != -1:
 
 
 
-gWorld, gStatsAnt, gStatsPost = newWorld()
 
 
 
@@ -1651,72 +1693,97 @@ if not gArgs["swallow"]:
 noNegger = np.vectorize(noNeg) #JAVI
 
 
-doInitialDistribution()
 
-# print("     %s" % " ".join([gConf["species"][i]["id"] for i in range(gNumberOfSpecies)]))
+# RESTART POINT
+thereWasZeros = True
+while thereWasZeros: # Sorry, we need this now to repeat the whole experiment
 
-print(f"\n\tUsing configuration:\n\t{gInDir}/{gInitConfFile}.json\n")
-print(" "*5, end='')
-for i in range(gNumberOfSpecies):
-    print("%8s" % (gConf["species"][i]["id"][:7],), end='')
-print()
+    gWorld, gStatsAnt, gStatsPost = newWorld()
+    doInitialDistribution()
 
-if gConf['p']:
-    dplt, seqPobPrev = initPlot()
+    # print("     %s" % " ".join([gConf["species"][i]["id"] for i in range(gNumberOfSpecies)]))
 
-
-if gOnLinux:
-    lastTime = startTime
-
-# ########### #
-#  MAIN LOOP  #
-# ########### #
-
-for genNumber in range(1, gArgs["numGen"]+1):
-    gStatsAnt.fill(0)
-    gStatsPost.fill(0)
-
-    doGrouping()
-
-    print("%3d: %s Tot: %8d" % (genNumber, gWorld[:,:].sum(axis=0),  gWorld[:,:].sum()))
+    print(f"\n\tUsing configuration:\n\t{gInDir}/{gInitConfFile}.json\n")
+    print(" "*5, end='')
+    for i in range(gNumberOfSpecies):
+        print("%8s" % (gConf["species"][i]["id"][:7],), end='')
+    print()
 
     if gConf['p']:
-        dplt, seqPobPrev = addPlot(dplt, seqPobPrev)
+        dplt, seqPobPrev = initPlot()
 
-    doAssociationQueueAndConsume()
-    gWorld = noNegger(gWorld) #JAVI
-    if gArgs["verbose"]:
-        checkNegs()
-
-
-    doUngroup()
-    doDistribute()
-
-    if gArgs["saveWorld"]:
-        saveWorld(genNumber)
-
-    if gToSaveExcel:
-        saveExcel(genNumber)
-
-    if os.path.isfile(TO_ABORT_EXECUTION_FILENAME) or myIDOfProcess and \
-       os.path.isfile(TO_ABORT_EXECUTION_FILENAME  +  myIDOfProcess):
-        print(f"""
-BROKE BECAUSE THERE IS A FILE "{TO_ABORT_EXECUTION_FILENAME}"
-Remove that file to avoid this to be repeated:
-        rm {TO_ABORT_EXECUTION_FILENAME}..
-""")
-        break
 
     if gOnLinux:
-        timeNow = datetime.now()
-        deltaTimeGen = timeNow - lastTime
-        lastTime = timeNow
-        timeRecording(timeNow, genNumber, gArgs["numGen"], deltaTimeGen, myIDOfProcess)
-        # [x for x in sys.argv if x.startswith("--outDir=")][-1].split('=')[-1])
-        if timeNow > REDZONETIME:
+        lastTime = startTime
+
+
+
+
+
+
+    # ########### #
+    #  MAIN LOOP  #
+    # ########### #
+
+    for genNumber in range(1, gArgs["numGen"]+1):
+        gStatsAnt.fill(0)
+        gStatsPost.fill(0)
+
+        doGrouping()
+
+        print("%3d: %s Tot: %8d" % (genNumber, gWorld[:,:].sum(axis=0),  gWorld[:,:].sum()))
+
+        if gConf['p']:
+            dplt, seqPobPrev = addPlot(dplt, seqPobPrev)
+
+        if anyZeros(noZeroListi):
+            thereWasZeros = True
             break
 
-    sys.stdout.flush()
+        doAssociationQueueAndConsume()
+        gWorld = noNegger(gWorld) #JAVI
+        if gArgs["verbose"]:
+            checkNegs()
+
+
+        doUngroup()
+        doDistribute()
+
+        if gArgs["saveWorld"]:
+            saveWorld(genNumber)
+
+        if gToSaveExcel:
+            saveExcel(genNumber)
+
+        if os.path.isfile(TO_ABORT_EXECUTION_FILENAME) or myIDOfProcess and \
+           os.path.isfile(TO_ABORT_EXECUTION_FILENAME  +  myIDOfProcess):
+            print(f"""
+    BROKE BECAUSE THERE IS A FILE "{TO_ABORT_EXECUTION_FILENAME}"
+    Remove that file to avoid this to be repeated:
+            rm {TO_ABORT_EXECUTION_FILENAME}..
+    """)
+            break
+
+        if gOnLinux:
+            timeNow = datetime.now()
+            deltaTimeGen = timeNow - lastTime
+            lastTime = timeNow
+            timeRecording(timeNow, genNumber, gArgs["numGen"], deltaTimeGen, myIDOfProcess)
+            # [x for x in sys.argv if x.startswith("--outDir=")][-1].split('=')[-1])
+            if timeNow > REDZONETIME:
+                break
+
+        sys.stdout.flush()
+
+    thereWasZeros = len(noZeroListi) > 0 and anyZeros(noZeroListi)
+    # if thereWasZeros:
+    #     if 'dplt' in locals() and gConf['p']:
+    #         print(type(dplt))
+    #         print(dplt)
+    #         print("Deleting previous plot")
+    #         dplt.close()
+
+# END OF WHILE TRUE
 
 
 # END RUNNING ####################################
@@ -1733,7 +1800,9 @@ if gConf['redirectStdout']:
 
 if gConf['p']:
     dplt.psavefig(gGlobalPDF)
-    input("Pulsa la tecla Enter ⮐  para salir")
+    if genNumber >= gArgs["numGen"]:
+        # it got broken by a zero
+        input("Press Enter key  ⮐  to exit")
 
 newArgv = " ".join(sys.argv)
 
